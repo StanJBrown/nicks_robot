@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<sdf version="1.5">
+  <world name="default">
+    <!-- global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- ground plane -->
+    <model name="grass">
+        <include>
+            <uri>model://grass</uri>
+        </include>
+    </model>
+
+    <!-- husky stuff -->
+    <model name="husky_with_lidar">
+       <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+        <include>
+            <uri>model://husky</uri>
+            <pose>0.0 0.5 0.3 0.0 0.0 0.0</pose>
+        </include>
+
+        <!-- horizontal laser -->
+        <include>
+            <uri>model://hokuyo</uri>
+            <pose>0.0 0.0 0.3 0.0 1.57079 0.0</pose>
+        </include>
+        
+        <!-- vertical laser -->
+        <include>
+            <uri>model://hokuyo</uri>
+            <pose>0.0 0.0 0.8 0.0 0.0 0.0</pose>
+        </include>
+    </model>
+        <!-- top_plate -->
+        <model name="top_plate">
+            <link name="top_plate_of_husky">
+                <pose>0.0 0.0 0.4 0.0 0.0 0.0</pose>
+
+                <inertial>
+                    <mass>1.0</mass>
+                    <inertia>
+                        <ixx>0.083</ixx>
+                        <ixy>0.0</ixy>
+                        <ixz>0.0</ixz>
+                        <iyy>0.083</iyy>
+                        <iyz>0.0</iyz>
+                        <izz>0.083</izz>
+                    </inertia>
+                </inertial>
+
+                <collision name="collision">
+                    <geometry>
+                        <box>
+                            <size>0.8 0.8 0.05</size>
+                        </box>
+                    </geometry>
+                </collision>
+
+                <visual name="visual">
+                    <geometry>
+                        <box>
+                            <size>0.8 0.8 0.05</size>
+                        </box>
+                    </geometry>
+                </visual>
+            </link>
+        </model>
+        <!-- top_plate -->
+        <model name="vertical_plate">
+            <link name="vert_plate_of_husky">
+                <pose>0.0 0.0 2 0.0 1.57079 0.0</pose>
+
+                <inertial>
+                    <mass>1.0</mass>
+                    <inertia>
+                        <ixx>0.083</ixx>
+                        <ixy>0.0</ixy>
+                        <ixz>0.0</ixz>
+                        <iyy>0.083</iyy>
+                        <iyz>0.0</iyz>
+                        <izz>0.083</izz>
+                    </inertia>
+                </inertial>
+
+                <collision name="collision">
+                    <geometry>
+                        <box>
+                            <size>0.5 0.8 0.05</size>
+                        </box>
+                    </geometry>
+                </collision>
+
+                <visual name="visual">
+                    <geometry>
+                        <box>
+                            <size>0.5 0.8 0.05</size>
+                        </box>
+                    </geometry>
+                </visual>
+            </link>
+        </model>
+
+  </world>
+</sdf>
