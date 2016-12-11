@@ -32,6 +32,13 @@
             <uri>model://hokuyo</uri>
             <pose>0.0 0.0 0.8 0.0 0.0 0.0</pose>
         </include>
+        
+        <!-- first_camera -->
+        <include>
+            <uri>model://pg_chameleon3</uri>
+            <pose>0.0 0.0 1.0 0.0 0.0 0.0</pose>
+        </include>
+
     </model>
         <!-- top_plate -->
         <model name="top_plate">
